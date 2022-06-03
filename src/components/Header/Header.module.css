@@ -1,0 +1,20 @@
+.Header {
+  display: flex;
+  position: fixed;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  width: min(calc(100% - 1rem), 79rem);
+  border-radius: 0 0 1rem 1rem;
+  padding: 1rem 3rem;
+  background: #fff;
+  /* border: #333 solid 1px; */
+  box-shadow: #11111111 0 1rem 1rem;
+  margin-top: -1px;
+}
+.input {
+  display: flex;
+  width: 30%;
+  margin-left: auto;
+}

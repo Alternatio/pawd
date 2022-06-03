@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: Montserrat;
+}
+
+html {
+  font-size: 20px;
+}
+@media (max-width: 1100px) {
+  html {
+    font-size: 1.75vw;
+  }
+}
+body {
+  background: #eee;
+}
+
+#root {
+  width: 100%;
+}
+
+.wrapper {
+  width: min(100%, 80rem);
+  display: flex;
+  justify-content: center;
+}
+
+::-webkit-scrollbar {
+  width: .3rem;
+  border-radius: 1rem;
+}
+::-webkit-scrollbar-thumb {
+  background: #222;
+  border-radius: 1rem;
+}
+
+button {
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: .5rem;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: .15s ease-in-out;
+  color: #000;
+  font-variant-caps: small-caps;
+}
+button:hover {
+  transform: scale(1.05);
+  box-shadow: #11111122 0 .5rem 1rem;
+}
+button:active {
+  transform: scale(0.95);
+}
+
+.buttonGreen:hover {
+  background: #4d7;
+}
+.buttonYellow:hover {
+  background: #fb4;
+}
+.buttonRed:hover {
+  background: #f45;
+}
+
+input {
+  border: none;
+  outline: none;
+  background: #eee;
+  border-radius: .75rem;
+  display: flex;
+  font-size: .8rem;
+  padding: .5rem 1rem;
+}
