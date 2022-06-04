@@ -1,0 +1,20 @@
+.popup {
+  background: #fff;
+  box-shadow: #11111133 0 1rem 1rem;
+  padding: .5rem;
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  width: calc(100% - 1rem);
+  border-radius: .5rem;
+  height: 78%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+
+.input {
+  width: 80%;
+}

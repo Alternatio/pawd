@@ -7,7 +7,7 @@ import List from '../List/List'
 import data from '../../data/data.json'
 
 const App: React.FC = () => {
-  const [copyData, setCopyData] = useState(data)
+  const [copyData, setCopyData] = useState<object[]>(data)
   const arrayOfKeys: string[] = [
     "ФИО",
     "Дата рождения",

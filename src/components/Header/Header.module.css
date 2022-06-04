@@ -12,6 +12,7 @@
   /* border: #333 solid 1px; */
   box-shadow: #11111111 0 1rem 1rem;
   margin-top: -1px;
+  z-index: 1000;
 }
 .input {
   display: flex;

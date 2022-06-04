@@ -1,13 +1,14 @@
 .Item {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 1rem;
   height: fit-content;
   /* border: #333 solid 1px; */
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: #11111111 0 1rem 1rem;
   background: #fff;
+  position: relative;
 }
 .index {
   font-weight: 600;
@@ -21,7 +22,8 @@
   gap: 1rem;
   justify-content: space-between;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
+  padding: 0 1rem;
 }
 .key {
   font-weight: 400;
@@ -29,6 +31,7 @@
 }
 .value {
   font-weight: 300;
+  text-align: right;
 }
 
 .buttons {

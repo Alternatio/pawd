@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './PopupAddPeople.module.css'
 import { motion } from 'framer-motion'
+import InputMask from 'react-input-mask';
 
 type PopupAddPeopleProps = {
   setPopupIsVisible: Function
@@ -47,10 +48,20 @@ const PopupAddPeople: React.FC<PopupAddPeopleProps> = (props: PopupAddPeopleProp
             <label 
             className={style.label}>
               {value}
-              <input 
+              {index === 1 && 
+              <InputMask 
+              mask='99.99.9999'
+              defaultValue='-'
               onChange={e => arrayInputs[index] = e.target.value}
               className={style.input}
-              type="text"/>
+              type="text"/>}
+              {index !== 1 &&
+              <InputMask 
+              mask=''
+              defaultValue='-'
+              onChange={e => arrayInputs[index] = e.target.value}
+              className={style.input}
+              type="text"/>}
             </label>
           )
         })}
