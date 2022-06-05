@@ -4,7 +4,7 @@
     "fullName": "Фадеев Абрам Михайлович",
     "dateOfBirth": "23.07.2003",
     "gender": "Мужской",
-    "post": "WEB - разработчик",
+    "post": "Рабочий",
     "nameOfDivision": "IT",
     "fullNameOfDirector": "Шинкарёв Никита Алексеевич"
   },
@@ -22,7 +22,7 @@
     "fullName": "Першин Денис Александрович",
     "dateOfBirth": "02.09.2002",
     "gender": "Мужской",
-    "post": "WEB - разработчик",
+    "post": "Контролёр",
     "nameOfDivision": "IT",
     "fullNameOfDirector": "Шинкарёв Никита Алексеевич"
   },
@@ -33,7 +33,7 @@
     "gender": "Мужской",
     "post": "Рабочий",
     "nameOfDivision": "Логистика",
-    "fullNameOfDirector": "Путин Владимир Владимирович"
+    "fullNameOfDirector": "Валериан Шотаевич Меладзе"
   },
   {
     "id": "4",
@@ -51,7 +51,7 @@
     "gender": "Мужской",
     "post": "Рабочий",
     "nameOfDivision": "Логистика",
-    "fullNameOfDirector": "Путин Владимир Владимирович"
+    "fullNameOfDirector": "Валериан Шотаевич Меладзе"
   },
   {
     "id": "6",
@@ -60,7 +60,7 @@
     "gender": "Мужской",
     "post": "Рабочий",
     "nameOfDivision": "Логистика",
-    "fullNameOfDirector": "Путин Владимир Владимирович"
+    "fullNameOfDirector": "Валериан Шотаевич Меладзе"
   },
   {
     "id": "7",
@@ -69,16 +69,16 @@
     "gender": "Женский",
     "post": "Рабочий",
     "nameOfDivision": "Логистика",
-    "fullNameOfDirector": "Путин Владимир Владимирович"
+    "fullNameOfDirector": "Валериан Шотаевич Меладзе"
   },
   {
     "id": "8",
     "fullName": "Марина Арнольдовна Хлебникова",
     "dateOfBirth": "25.05.1986",
     "gender": "Женский",
-    "post": "Рабочий",
+    "post": "Контролёр",
     "nameOfDivision": "Логистика",
-    "fullNameOfDirector": "Путин Владимир Владимирович"
+    "fullNameOfDirector": "Валериан Шотаевич Меладзе"
   },
   {
     "id": "9",
@@ -87,7 +87,7 @@
     "gender": "Мужской",
     "post": "Рабочий",
     "nameOfDivision": "Логистика",
-    "fullNameOfDirector": "Путин Владимир Владимирович"
+    "fullNameOfDirector": "Валериан Шотаевич Меладзе"
   },
   {
     "id": "10",
@@ -96,7 +96,7 @@
     "gender": "Мужской",
     "post": "Рабочий",
     "nameOfDivision": "Логистика",
-    "fullNameOfDirector": "Путин Владимир Владимирович"
+    "fullNameOfDirector": "Валериан Шотаевич Меладзе"
   },
   {
     "id": "11",
@@ -105,14 +105,14 @@
     "gender": "Мужской",
     "post": "Рабочий",
     "nameOfDivision": "Логистика",
-    "fullNameOfDirector": "Путин Владимир Владимирович"
+    "fullNameOfDirector": "Валериан Шотаевич Меладзе"
   },
   {
     "id": "12",
     "fullName": "Валериан Шотаевич Меладзе",
     "dateOfBirth": "14.06.1949",
     "gender": "Мужской",
-    "post": "Рабочий",
+    "post": "Руководитель подразделения",
     "nameOfDivision": "Логистика",
     "fullNameOfDirector": "Путин Владимир Владимирович"
   },
@@ -123,7 +123,7 @@
     "gender": "Мужской",
     "post": "Рабочий",
     "nameOfDivision": "Логистика",
-    "fullNameOfDirector": "Путин Владимир Владимирович"
+    "fullNameOfDirector": "Валериан Шотаевич Меладзе"
   },
   {
     "id": "14",
@@ -132,6 +132,6 @@
     "gender": "Мужской",
     "post": "Рабочий",
     "nameOfDivision": "Логистика",
-    "fullNameOfDirector": "Путин Владимир Владимирович"
+    "fullNameOfDirector": "Валериан Шотаевич Меладзе"
   }
 ]
