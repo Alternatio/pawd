@@ -31,6 +31,7 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
           onChange={e => props.setSearch((e.target.value).toLowerCase())}
           maxLength={50}
           className={style.input}
+          placeholder="Поиск"
           type="text" />
         </div>
       </div>

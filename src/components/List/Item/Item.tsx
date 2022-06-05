@@ -23,7 +23,6 @@ interface objectKeys {
 
 const Item: React.FC<ItemProps> = (props: ItemProps) => {
   const [popupIsVisible, setPopupIsVisible] = useState<boolean>(false)
-
   return (
     <motion.div 
     layout

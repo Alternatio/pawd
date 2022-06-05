@@ -37,6 +37,11 @@ body {
   border-radius: 1rem;
 }
 
+::selection {
+  background: #111;
+  color: #eee;
+}
+
 button {
   padding: .5rem 1rem;
   font-size: 1rem;

@@ -36,7 +36,7 @@ const PopupEditPeople: React.FC<PopupEditPeopleProps> = (props: PopupEditPeopleP
             <InputMask 
             mask='99.99.9999'
             onChange={e => props.value.dateOfBirth = e.target.value}
-            defaultValue={Object.values(props.data[props.index])[index]}
+            defaultValue={Object.values(props.value)[index]}
             className={style.input}
             placeholder={value}
             type="text"/>}
@@ -50,7 +50,7 @@ const PopupEditPeople: React.FC<PopupEditPeopleProps> = (props: PopupEditPeopleP
               index === 5 && (props.value.nameOfDivision = e.target.value)
               index === 6 && (props.value.fullNameOfDirector = e.target.value)
             }}
-            defaultValue={Object.values(props.data[props.index])[index]}
+            defaultValue={Object.values(props.value)[index]}
             className={style.input}
             placeholder={value}
             maxLength={50}

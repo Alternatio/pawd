@@ -78,6 +78,7 @@ const PopupAddPeople: React.FC<PopupAddPeopleProps> = (props: PopupAddPeopleProp
           </button>
           <button 
           onClick={() => {
+            // push data to object
             lastObject !== undefined ? (
               lastObject.id !== undefined && (
                 arrayInputs[0] = ((Number(lastObject.id)+1)).toString()
@@ -90,7 +91,9 @@ const PopupAddPeople: React.FC<PopupAddPeopleProps> = (props: PopupAddPeopleProp
             objectPeople.post = arrayInputs[4]
             objectPeople.nameOfDivision = arrayInputs[5]
             objectPeople.fullNameOfDirector = arrayInputs[6]
+            // set to data this object
             props.setData([...props.data, objectPeople])
+            props.setPopupIsVisible(false)
           }}
           className='buttonGreen'>
             Добавить

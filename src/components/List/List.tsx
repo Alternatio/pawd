@@ -43,13 +43,18 @@ const List: React.FC<ListProps> = (props: ListProps) => {
       className={style.List}>
         <AnimatePresence>
           {
+            (props.data.length === 0) && <div>Список пуст!</div>
+          }
+          {
             searchFunction(props.data).map((value: objectKeys, index: any) => {
-              return <Item 
-              arrayOfKeys={props.arrayOfKeys}
-              index={index}
-              value={value}
-              setData={props.setData}
-              data={props.data}/>
+              return (
+                <Item 
+                arrayOfKeys={props.arrayOfKeys}
+                index={index}
+                value={value}
+                setData={props.setData}
+                data={props.data}/>
+              )
             })
           }
         </AnimatePresence>
