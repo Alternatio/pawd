@@ -1,6 +1,7 @@
 import React from 'react'
 import style from './PopupEditPeople.module.css'
 import { motion } from 'framer-motion'
+import InputMask from 'react-input-mask';
 
 type PopupEditPeopleProps = {
   setPopupIsVisible: Function
@@ -8,10 +9,11 @@ type PopupEditPeopleProps = {
   data: object[]
   setData: Function
   index: number
-  value: objectValues
+  value: objectKeys
 }
 
-interface objectValues {
+interface objectKeys {
+  id?: string
   fullName?: string
   dateOfBirth?: string
   gender?: string
@@ -29,26 +31,31 @@ const PopupEditPeople: React.FC<PopupEditPeopleProps> = (props: PopupEditPeopleP
     exit={{opacity:0}}>
       {props.arrayOfKeys.map((value, index) => {
         return (
-          <input 
-          onChange={e => {
-            if(index === 0)
-              props.value.fullName = e.target.value
-            if(index === 1)
-              props.value.dateOfBirth = e.target.value
-            if(index === 2)
-              props.value.gender = e.target.value
-            if(index === 3)
-              props.value.post = e.target.value
-            if(index === 4)
-              props.value.nameOfDivision = e.target.value
-            if(index === 5)
-              props.value.fullNameOfDirector = e.target.value
-          }}
-          defaultValue={Object.values(props.data[props.index])[index]}
-          className={style.input}
-          placeholder={value}
-          maxLength={50}
-          type="text"/>
+          <>
+            {((index === 2) && (index > 0)) && 
+            <InputMask 
+            mask='99.99.9999'
+            onChange={e => props.value.dateOfBirth = e.target.value}
+            defaultValue={Object.values(props.data[props.index])[index]}
+            className={style.input}
+            placeholder={value}
+            type="text"/>}
+            {((index !== 2) && (index > 0)) &&
+            <InputMask 
+            mask=''
+            onChange={e => {
+              index === 1 && (props.value.fullName = e.target.value)
+              index === 3 && (props.value.gender = e.target.value)
+              index === 4 && (props.value.post = e.target.value)
+              index === 5 && (props.value.nameOfDivision = e.target.value)
+              index === 6 && (props.value.fullNameOfDirector = e.target.value)
+            }}
+            defaultValue={Object.values(props.data[props.index])[index]}
+            className={style.input}
+            placeholder={value}
+            maxLength={50}
+            type="text"/>}
+          </>
         )
       })}
     </motion.div>

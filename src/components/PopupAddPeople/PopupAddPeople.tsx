@@ -10,17 +10,19 @@ type PopupAddPeopleProps = {
   data: object[]
 }
 
-interface objectValues {
-  fullName: string
-  dateOfBirth: string
-  gender: string
-  post: string
-  nameOfDivision: string
-  fullNameOfDirector: string
+interface objectKeys {
+  id?: string
+  fullName?: string
+  dateOfBirth?: string
+  gender?: string
+  post?: string
+  nameOfDivision?: string
+  fullNameOfDirector?: string
 }
 
 const PopupAddPeople: React.FC<PopupAddPeopleProps> = (props: PopupAddPeopleProps) => {
-  const objectPeople: objectValues = {
+  const objectPeople: objectKeys = {
+    id: '',
     fullName: '',
     dateOfBirth: '',
     gender: '',
@@ -28,8 +30,8 @@ const PopupAddPeople: React.FC<PopupAddPeopleProps> = (props: PopupAddPeopleProp
     nameOfDivision: '',
     fullNameOfDirector: ''
   }
-
-  const arrayInputs:string[] = []
+  const lastObject: objectKeys = props.data[props.data.length-1]
+  const arrayInputs: string[] = []
 
   return (
     <motion.div 
@@ -45,24 +47,27 @@ const PopupAddPeople: React.FC<PopupAddPeopleProps> = (props: PopupAddPeopleProp
         {props.arrayOfKeys.map((value, index) => {
           arrayInputs.push('')
           return (
-            <label 
-            className={style.label}>
-              {value}
-              {index === 1 && 
-              <InputMask 
-              mask='99.99.9999'
-              defaultValue='-'
-              onChange={e => arrayInputs[index] = e.target.value}
-              className={style.input}
-              type="text"/>}
-              {index !== 1 &&
-              <InputMask 
-              mask=''
-              defaultValue='-'
-              onChange={e => arrayInputs[index] = e.target.value}
-              className={style.input}
-              type="text"/>}
-            </label>
+            <>
+              {index > 0 && <label 
+              className={style.label}>
+                {value}
+                {index === 2 && 
+                <InputMask 
+                mask='99.99.9999'
+                defaultValue='-'
+                onChange={e => arrayInputs[index] = e.target.value}
+                className={style.input}
+                type="text"/>}
+                {index !== 2 &&
+                <InputMask 
+                maxLength={50}
+                mask=''
+                defaultValue='-'
+                onChange={e => arrayInputs[index] = e.target.value}
+                className={style.input}
+                type="text"/>}
+              </label>}
+            </>
           )
         })}
         <div className={style.buttons}>
@@ -73,12 +78,18 @@ const PopupAddPeople: React.FC<PopupAddPeopleProps> = (props: PopupAddPeopleProp
           </button>
           <button 
           onClick={() => {
-            objectPeople.fullName = arrayInputs[0]
-            objectPeople.dateOfBirth = arrayInputs[1]
-            objectPeople.gender = arrayInputs[2]
-            objectPeople.post = arrayInputs[3]
-            objectPeople.nameOfDivision = arrayInputs[4]
-            objectPeople.fullNameOfDirector = arrayInputs[5]
+            lastObject !== undefined ? (
+              lastObject.id !== undefined && (
+                arrayInputs[0] = ((Number(lastObject.id)+1)).toString()
+                )
+              ) : (arrayInputs[0] = '0')
+            objectPeople.id = arrayInputs[0]
+            objectPeople.fullName = arrayInputs[1]
+            objectPeople.dateOfBirth = arrayInputs[2]
+            objectPeople.gender = arrayInputs[3]
+            objectPeople.post = arrayInputs[4]
+            objectPeople.nameOfDivision = arrayInputs[5]
+            objectPeople.fullNameOfDirector = arrayInputs[6]
             props.setData([...props.data, objectPeople])
           }}
           className='buttonGreen'>

@@ -7,6 +7,7 @@ type HeaderProps = {
   arrayOfKeys: string[]
   setData: Function
   data: object[]
+  setSearch: Function
 }
 
 const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
@@ -27,6 +28,8 @@ const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
             Удалить всё
           </button>
           <input 
+          onChange={e => props.setSearch((e.target.value).toLowerCase())}
+          maxLength={50}
           className={style.input}
           type="text" />
         </div>

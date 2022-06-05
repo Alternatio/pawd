@@ -1,14 +1,17 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import style from './List.module.css'
 import Item from './Item/Item'
+import { AnimatePresence } from 'framer-motion'
 
 type ListProps = {
   data: object[]
   arrayOfKeys: string[]
   setData: Function
+  search: string
 }
 
-interface objectValues {
+interface objectKeys {
+  id?: string
   fullName?: string
   dateOfBirth?: string
   gender?: string
@@ -18,20 +21,38 @@ interface objectValues {
 }
 
 const List: React.FC<ListProps> = (props: ListProps) => {
+  const keys: string[] = [
+    'id',
+    'fullName',
+    'dateOfBirth',
+    'gender',
+    'post',
+    'nameOfDivision',
+    'fullNameOfDirector'
+  ]
+
+  const searchFunction: Function = (data: object[]) => {
+    return (data.filter((item: any) => 
+      keys.some(key => item[key].toLowerCase().includes(props.search))
+    ))
+  }
+
   return (
     <div className='wrapper'>
       <div 
       className={style.List}>
-        {
-          props.data.map((value: objectValues, index) => {
-            return <Item 
-            arrayOfKeys={props.arrayOfKeys}
-            index={index}
-            value={value}
-            setData={props.setData}
-            data={props.data}/>
-          })
-        }
+        <AnimatePresence>
+          {
+            searchFunction(props.data).map((value: objectKeys, index: any) => {
+              return <Item 
+              arrayOfKeys={props.arrayOfKeys}
+              index={index}
+              value={value}
+              setData={props.setData}
+              data={props.data}/>
+            })
+          }
+        </AnimatePresence>
       </div>
     </div>
   )

@@ -1,8 +1,9 @@
 .Item {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
   height: fit-content;
+  width: calc(50% - 2rem);
   /* border: #333 solid 1px; */
   border-radius: 1rem;
   padding: 1rem;

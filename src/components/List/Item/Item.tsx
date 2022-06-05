@@ -6,9 +6,19 @@ import PopupEditPeople from '../../PopupEditPeople/PopupEditPeople';
 type ItemProps = {
   data: object[]
   index: number
-  value: object
+  value: objectKeys
   arrayOfKeys: string[]
   setData: Function
+}
+
+interface objectKeys {
+  id?: string
+  fullName?: string
+  dateOfBirth?: string
+  gender?: string
+  post?: string
+  nameOfDivision?: string
+  fullNameOfDirector?: string
 }
 
 const Item: React.FC<ItemProps> = (props: ItemProps) => {
@@ -16,6 +26,7 @@ const Item: React.FC<ItemProps> = (props: ItemProps) => {
 
   return (
     <motion.div 
+    layout
     initial={{opacity:0}}
     animate={{opacity:1}}
     exit={{opacity:0}}
@@ -31,18 +42,20 @@ const Item: React.FC<ItemProps> = (props: ItemProps) => {
         setPopupIsVisible={setPopupIsVisible}/>}
       </AnimatePresence>
       <div className={style.index}>
-        #{props.index}
+        #{props.value.id}
       </div>
       {props.arrayOfKeys.map((value, index) => {
         return (
-          <div className={style.line}>
+          <>
+            {index > 0 && <div className={style.line}>
             <div className={style.key}>
               {value}
             </div>
             <div className={style.value}>
               {Object.values(props.value)[index]}
             </div>
-          </div>
+          </div>}
+          </>
         )
       })}
       <div className={style.buttons}>
@@ -58,7 +71,6 @@ const Item: React.FC<ItemProps> = (props: ItemProps) => {
           const tempArray: object[] = props.data
           tempArray.splice(props.index, 1)
           props.setData([...tempArray])
-          console.log(tempArray)
         }}
         className='buttonRed'>
           Удалить
