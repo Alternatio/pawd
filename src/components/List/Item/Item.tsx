@@ -67,9 +67,7 @@ const Item: React.FC<ItemProps> = (props: ItemProps) => {
         </button>
         <button 
         onClick={() => {
-          const tempArray: object[] = props.data
-          tempArray.splice(props.index, 1)
-          props.setData([...tempArray])
+          props.setData(props.data.filter((item: objectKeys) => (item.id !== props.value.id)))
         }}
         className='buttonRed'>
           Удалить
